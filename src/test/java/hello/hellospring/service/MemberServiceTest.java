@@ -57,7 +57,7 @@ class MemberServiceTest {
 
         //when
         memberService.join(member1);
-        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));//memberService.join(member2) 로직을 실행하면 IllegalStateException 이 터져야한다.
+        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));//memberService.join(member2) 로직을 실행하면 IllegalStateException 이 터져야한다. -> service 파일에 @Serivce 어노테이션을 등록해준다.
         Assertions.assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다."); //문구가 맞는지 점검
         /*try {
             memberService.join(member2);
