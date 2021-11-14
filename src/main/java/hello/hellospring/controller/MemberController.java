@@ -18,6 +18,7 @@ public class MemberController {
     @Autowired // Autowired로 선언되면 스프링이 해당 컨트롤러에 연결해준다.
     public MemberController(MemberService memberService) { // Controller는 어노테이션이 있어서 스프링이 인식하지만, service는 어노테이션으로 등록되어 있지 않아 인식하지못한다.
         this.memberService = memberService;
+        System.out.println("memberService = " + memberService.getClass()); // 프록시가 주입되는지 확인
     }
 
     @GetMapping("/members/new")
